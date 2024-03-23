@@ -1,265 +1,129 @@
-/* CSS files add styling rules to your content */
+
+
 
 body {
-
-background-image: url('./background.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-    height:100vh;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push content to the top and bottom */
+    align-items: center; /* Centers content horizontally */
+    margin: 0;
+    height: 100vh; /* Ensures body takes up the full viewport height */
+    background-image: url('computer_bground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-a{
-
-  font-size: 25px;
-  color: font-family: 'Roboto Flex', sans-serif;
-
+.centered-content {
+    /* Add styling as needed, e.g., for vertical centering within its section */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p{
-
-  font-family: font-family: 'Roboto Flex', sans-serif;
-;
+.bottom-content {
+    /* Adjust as needed to ensure it's at the bottom */
+    width: 100%; /* Ensure it spans the full width if needed */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align to the bottom */
+    margin-bottom: 0;
 }
 
-h1 {
- 
-   color: rgb(0, 0, 0);
-  font-size: 60pt;
-  font-family: 'Roboto Flex', sans-serif;
-
-}
-.special-h2{
-  margin-top:0;
-}
-
-h2 {
-   color: rgb(245, 159, 56);
-  font-size:32pt;
-  letter-spacing: 5px;
-   font-family: 'Gaegu', sans-serif;
-/*   margin-top:0; */
-}
-
-button {
-
-font-family: font-family: 'Roboto Flex', sans-serif;
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  width: 100%;
-  /*   text-align: center; */
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 30px 2px;
-  cursor: pointer;
-}
-
-p {
-  font-size: 12pt;
-  line-height: 18pt;
-
-font-family: 'Roboto Flex', sans-serif;
-}
-
-.left {
-  width: 15%;
-  padding: 1% 1% 1% 0;
-  float: left;
-  display: inline-block;
-  /*   background-color: red; */
-}
-
-.center {
-  width: 15%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-}
-
-.right {
-  width: 60%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-}
-
-.nav {
-  padding: 2%;
-  width: 26%;
-  height: 100%;
-  display: inline-block;
-  float: left;
-  /*     background-color:red; */
-}
-
-.content {
-  padding: 2%;
-  width: 50%;
-  display: inline-block;
-  float: left;
-  /*   background-color:yellow; */
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  f
-font-family: 'Roboto Flex', sans-serif;
-font-size: 20pt;
-  list-style-type: none;
-  padding-bottom: 1em;
-}
-
-li.bullet {
-  list-style-type: "- ";
-  margin: 1%;
-  padding: 0;
-}
-
-li.bullet a {
-  color: rgb(255,255,255);
-}
-
-li a {
-  color: white;
-font-family: 'Roboto Flex', sans-serif;
-}
-
-iframe {
-  margin: 0;
-  padding: 0;
-  border: none;
-  width: 100%;
-  /*   height: 400px; */
-  display: inline-block;
-  float: left;
-  margin-bottom: 2%;
-}
-
-.full-width-box {
-  width: 100%;
-  margin-bottom: 2%;
-  display: inline-block;
-  float: left;
+.img-container {
+    background-color: rgba(255,0,0,0.2);
+    width: 100%;
+    max-width: 100%;
+    height: 90vh; /* Adjust this as necessary */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Aligns children (the image) to the bottom */
+  
 }
 
 img {
-  height: 400px;
-  display: inline-block;
-  float: left;
-  margin-bottom: 2%;
-  margin-right: 2%;
-}
-
-body .gist .gist-file {
-  margin-bottom: 0;
-  border: 1px dashed #adb5bd;
-  border-radius: 0;
-}
-
-body .gist .gist-data {
-  border-bottom: none;
-  border-radius: 0;
-  background-color: #f1f3f5;
-}
-
-body .gist .blob-wrapper {
-  border-radius: 0;
-}
-
-body .gist .highlight {
-  background-color: transparent;
-  font-size: 14px;
-}
-
-body .gist .highlight td {
-  padding: 5px 15px !important;
-  line-height: 1;
- 
-}
-
-body .gist tr:first-child td {
-  padding-top: 15px !important;
-}
-
-body .gist tr:last-child td {
-  padding-bottom: 15px !important;
-}
-
-body .gist .blob-num {
-  color: #ced4da;
-  background-color: #495057;
-  pointer-events: none;
-}
-
-body .gist .gist-meta {
-  display: none;
-}
-
-.nav-link {
-  font-size: 18px;
-  line-height: 27px;
-  cursor: pointer;
-}
-.nav-link a,
-.nav-link a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-#toggle {
-  display: none;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
- font-family: 'Roboto Flex', sans-serif;
-
-    margin: 1%;
-    width: 98%;
-    height: 100%;
-  }
-  .nav {
-    width: 100%;
-  }
-  .content {
-    width: 100%;
-    float: left;
-  }
-
-  img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 90vh; /* Adjust if you want to limit the image height */
+    object-fit: cover;
+    width: auto;
     height: auto;
-  }
+    margin-bottom: 0;
+     margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.myBox {
-  /*   background: red; */
 
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  border: 1px solid black;
+/*button folders*/
+.image-button {
+    background-image: url('folder_button.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire button area */
+    background-position: center; /* Center the background image */
+    background-color: transparent; /* Ensure no background color */
+    width: 100px; /* Width of the button, adjust as needed */
+    height: auto; /* Increased height to accommodate text below the image */
+    border: none; /* Remove the default border */
+    cursor: pointer; /* Change the cursor on hover to indicate it's clickable */
+    color: white; /* Text color, adjust as needed */
+    font-family: 'roboto Flex', sans-serif;
+    font-size: 16px; /* Adjust as needed */
+    text-align: center; /* Center the text horizontally */
+    line-height: normal; /* Reset line-height */
+    padding-top: 120px; /* Adjust based on your image size to push text to the bottom */
+    margin: 0;
+    display: inline-block; /* Allows the button to size to its content */
+ overflow: hidden; /* Ensures no overflow of content */
+ text-decoration: none; /* Remove underline from links */
 }
 
-.fullwidth {
-  width: 100%;
-  float: left;
+/*hover state */
+.image-button:hover {
+    opacity: 0.8; /* Make the button slightly transparent on hover */
 }
 
-.nav{
-  display: none;
+/* Positioning for buttons */
+#button-one {
+    position: absolute;
+    top: 90px;
+    left: 200px;
 }
+
+#button-two {
+    position: absolute;
+    bottom: 300px;
+   right: 130px;
+}
+
+#button-three {
+    position: absolute;
+  top: 300px;
+   left: 350px;
+}
+
+/*text*/
+h1 {
+    position: absolute; /* This positions the <h1> over the image */
+    bottom: 50px;
+
+    color: rgb(255,255,255);
+    font-size: 40pt;
+    font-family: 'Roboto Flex', sans-serif;
+    margin: 0; /* Removes default margin */
+}
+
+h2{
+    position:absolute;
+   bottom:10px;
+    color: rgb(255, 105, 180);
+    
+}
+
+}
+
+

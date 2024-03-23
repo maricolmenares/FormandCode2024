@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff69b4; /* Bright pink background */
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+#window {
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    background-color: #fff;
+    border-radius: 0; /* No rounded corners for fullscreen */
+    box-shadow: none; /* No shadow for fullscreen */
+    overflow: hidden; /* Keep this to contain child elements */
+    display: flex;
+    flex-direction: column; /* Stack titlebar and content vertically */
+}
+
+#titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4500; /* Orange for the title bar */
+    color: #ffffff;
+    padding: 10px;
+    flex-shrink: 0; /* Prevent titlebar from shrinking */
+}
+
+#title {
+    font-size: 16px;
+}
+
+#window-controls {
+    /* Align the close button to the right */
+}
+
+#close-button {
+    border: 2px solid #ff4500; /* Orange border for the close button */
+    background-color: #ffffff; /* White background for the button */
+    color: #ff4500; /* Orange text color */
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+#close-button:hover {
+    background-color: #ff4500; /* Orange background on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+#content {
+    padding: 20px;
+    overflow-y: auto; /* Enables vertical scrolling within the content */
+    background-color: #fce4ec; /* Lighter pink for a subtle contrast */
+    flex-grow: 1; /* Allows content to fill the remaining space */
+}
