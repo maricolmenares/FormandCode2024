@@ -1,10 +1,18 @@
 
 let numbers = []; // Array to store numbers and their categories
 
-function setup() {
-  createCanvas(600, 400);
-  textSize(24);
+
+  function setup() {
+
+  let canvas=
+  createCanvas(400, 400);
+
+   canvas.parent('sketch2');
+    textSize(24);
   textAlign(CENTER, CENTER);
+
+}
+
 
 
   
