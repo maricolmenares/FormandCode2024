@@ -3,9 +3,11 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #ff69b4; /* Bright pink background */
-    background: linear-gradient(to right, #ff77ff, #ffcaff);
-    overflow: hidden; /* Prevent scrolling on the body */
+     background-image: url('computer_bground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-content: center;
 }
 
 #window {
@@ -16,6 +18,7 @@ body, html {
     box-shadow: none; /* No shadow for fullscreen */
     overflow: hidden; /* Keep this to contain child elements */
     display: flex;
+
     flex-direction: column; /* Stack titlebar and content vertically */
         background-color: #ff69b4; /* Bright pink background */
     background: linear-gradient(to right, #ff77ff, #ffcaff);

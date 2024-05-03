@@ -118,6 +118,12 @@ img {
    left: 900px;
 }
 
+#button-six {
+    position: absolute;
+  top: 80px;
+   left: 900px;
+}
+
 /*text*/
 h1 {
     position: absolute; /* This positions the <h1> over the image */
