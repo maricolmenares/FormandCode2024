@@ -5,34 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desktop Window Simulation</title>
     <link rel="stylesheet" href="style3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
     <div id="window">
         <div id="titlebar">
-
-<!--project title goes here -->
             <div id="title">the squint test</div>
             <div id="window-controls">
-                <!-- <button id="close-button">X</button> -->
-                <a href="index.html" id="close-button" >X</a>
+                <a href="index.html" id="close-button">X</a>
             </div>
         </div>
         <div id="content">
-<!--project description goes here -->
-            <p> This camara viewed is meant to serve as a tool for designers to evaluate the visibility of their designs. It is often taught in design school to check your layouts by using 'the squint test' and seeing what shapes are most prominent when you blur your vision. This filter allows you to do that, there is a slider for a costumizeable ammount of 'squint'.... test out your best work, will you pass the test? </p>
-            <!-- Add more content to demonstrate scrolling -->
+            <p>This camera viewed is meant to serve as a tool for designers to evaluate the visibility of their designs. It is often taught in design school to check your layouts by using 'the squint test' and seeing what shapes are most prominent when you blur your vision. This filter allows you to do that, there is a slider for a customizable amount of 'squint'.... test out your best work, will you pass the test?</p>
         
-            <div class="fullwidth">
-        <!-- below width and height refers to the dimensions of your sketch-->
+            <div id="p5-sketch">
+                <!-- Your p5.js sketch will display here -->
+            </div>
+        </div>
+    </div>
 
-        <a href="https://editor.p5js.org/maricolmenares/full/6loIgpE4x"></a>
+    <script>
+        var capture;
+        var slider;
 
-            <div class="fullwidth">
-        <!-- below width and height refers to the dimensions of your sketch-->
+        function setup() {
+            var canvas = createCanvas(400, 500);
+            canvas.parent('p5-sketch');
+            capture = createCapture(VIDEO);
+            capture.size(400, 500);
+            capture.hide(); // Hide the default HTML video element
+            noStroke();
 
-       <iframe style="width:400px;height:550px;" src="https://editor.p5js.org/maricolmenares/full/6loIgpE4x"></iframe>
+            slider = createSlider(2, 10, 3);
+            slider.position(500, 550);
 
-      </div>
+            createDiv('Slide to squint').position(500, 520);
+        }
+
+        function draw() {
+            background(0);
+            capture.loadPixels();
+            var stepSize = slider.value();
+
+            for (var x = 0; x < capture.width; x += stepSize) {
+                for (var y = 0; y < capture.height; y += stepSize) {
+                    var index = ((y * capture.width) + x) * 4;
+                    var redVal = capture.pixels[index];
+                    var greenVal = capture.pixels[index + 1];
+                    var blueVal = capture.pixels[index + 2];
+                    fill(redVal, greenVal, blueVal);
+                    rect(x, y, stepSize, stepSize);
+                }
+            }
+        }
+    </script>
 
 
-        
+</body>
+</html>
